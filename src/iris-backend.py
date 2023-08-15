@@ -16,7 +16,7 @@ def hello():
 # load model function 
 def load_model():
     # load model
-    with open('../model/iris-classifier.pkl', 'rb') as file:
+    with open('model/iris-classifier.pkl', 'rb') as file:
         model = pickle.load(file)
     return model
 
@@ -35,7 +35,7 @@ def check_model():
         response = {
             "code": 404,
             "messages": "Model is not ready! please check your path or model",
-            "error": e
+            "error": str(e)
         }
     return response
 
@@ -84,5 +84,6 @@ async def predict(request: Request):
     # return response
     return response
 
+# run app
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)

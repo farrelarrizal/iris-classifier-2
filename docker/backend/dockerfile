@@ -1,0 +1,21 @@
+FROM python:3.9.9-slim-buster
+
+# set directory
+WORKDIR /home
+
+COPY ./requirements.txt .
+
+RUN apt-get update && apt-get upgrade -y \
+    && pip install -r requirements.txt
+
+# choose port
+EXPOSE 8000
+
+CMD ["python", "src/iris-backend.py"]
+
+# # build the container
+# docker build -t iris-backend .
+
+# # run the container
+# docker run -p 8000:8000 iris-backend
+
