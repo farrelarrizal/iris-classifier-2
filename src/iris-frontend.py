@@ -6,7 +6,7 @@ import requests
 image = Image.open('assets/header-iris.png')
 st.image(image)
 st.title("Iris Classifier App")
-st.markdown('by: Farrel Arrizal | Pacmann Batch July 2023')
+st.markdown('by: Farrel Arrizal')
 st.divider()
 st.subheader('Just type the value. Then, click the Predict button to get the result :sunglasses:')
 
